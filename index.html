@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mabutho</title>
+  <link rel="stylesheet" href="styel.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">PU</div>
+      <div>
+        <h1>Push-Up Progress — For Your Friend</h1>
+        <p class="lead">Track your push-up strength journey with a clean black & purple theme.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Quick test & record</h2>
+        <div class="stats" id="stats">
+          <div class="stat">
+            <small>Current Max</small>
+            <strong id="currentMax">—</strong>
+            <small style="color:var(--muted)">reps</small>
+          </div>
+          <div class="stat">
+            <small>Sessions</small>
+            <strong id="sessionsCount">0</strong>
+            <small style="color:var(--muted)">records</small>
+          </div>
+        </div>
+
+        <label for="repsInput">Record a set (reps)</label>
+        <div style="display:flex;gap:8px;margin-bottom:10px">
+          <input id="repsInput" type="number" min="1" step="1" placeholder="e.g. 3" />
+          <button id="recordBtn">Record</button>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-bottom:12px">
+          <button id="testBtn" class="ghost">Do a max test</button>
+          <button id="exportBtn" class="ghost">Export CSV</button>
+          <button id="resetBtn" class="ghost">Reset data</button>
+        </div>
+
+        <label>Progress chart</label>
+        <canvas id="chart" height="140"></canvas>
+
+        <footer>
+          <small>Data is stored locally in your browser. Clearing browser data removes your records.</small>
+        </footer>
+      </section>
+
+      <aside class="card">
+        <h2>8-Week Starter Plan</h2>
+        <p class="plan">Perfect for beginners who can do 1–3 pushups. Train 3× per week (e.g., Mon/Wed/Fri).</p>
+        <ol style="margin-top:12px;color:var(--muted)">
+          <li><strong>Weeks 1–2:</strong> 3 sets of incline or knee pushups — aim 6–10 reps.</li>
+          <li><strong>Weeks 3–4:</strong> Mix knee/full pushups. Add 1 slow-lowering set.</li>
+          <li><strong>Weeks 5–6:</strong> Full pushups 3 sets — target 6–12 reps. Add a 4th set if strong.</li>
+          <li><strong>Weeks 7–8:</strong> Test your max each week. Add tempo (2s down) and plank finishers.</li>
+        </ol>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button id="suggestBtn">Suggest today's session</button>
+          <button id="downloadPlan" class="ghost">Download plan</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <script>
+  </script>
+</body>
+</html>
