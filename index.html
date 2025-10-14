@@ -3,8 +3,77 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mabutho</title>
-  <link rel="stylesheet" href="styel.css" />
+  <title>Push-Up Progress — For Your Friend</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --card: #0a0014;
+      --accent: #a020f0;
+      --muted: #b8a3d6;
+      --glass: rgba(255, 255, 255, 0.05);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: #e6e0f9;
+      background: linear-gradient(180deg, #000000 0%, #130026 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    .wrap { width: 100%; max-width: 980px; }
+    header { display: flex; gap: 16px; align-items: center; margin-bottom: 18px; }
+    .logo {
+      width: 64px; height: 64px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #6a0dad);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 20px;
+      box-shadow: 0 0 20px rgba(160, 32, 240, 0.6);
+    }
+    h1 { margin: 0; font-size: 22px; color: var(--accent); }
+    p.lead { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .grid { display: grid; grid-template-columns: 1fr 360px; gap: 18px; }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), rgba(10, 0, 20, 0.85));
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(160, 32, 240, 0.2);
+    }
+    .card h2 { margin: 0 0 8px 0; color: var(--accent); }
+    .stats { display: flex; gap: 12px; margin-bottom: 12px; }
+    .stat { flex: 1; background: var(--glass); padding: 12px; border-radius: 10px; text-align: center; }
+    .stat strong { display: block; font-size: 20px; color: #fff; }
+    label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+    input[type=number], select {
+      width: 100%; padding: 10px; border-radius: 8px; border: none;
+      background: rgba(255,255,255,0.07); color: #fff;
+    }
+    button {
+      padding: 10px 12px; border-radius: 10px; border: none;
+      background: var(--accent); color: #fff;
+      cursor: pointer; font-weight: 600; transition: 0.2s;
+    }
+    button:hover { box-shadow: 0 0 10px rgba(160, 32, 240, 0.5); }
+    button.ghost {
+      background: transparent; border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+    }
+    .controls { display: flex; gap: 8px; align-items: center; }
+    .plan { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    canvas {
+      width: 100%; height: 140px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04));
+      border-radius: 8px;
+    }
+    footer { margin-top: 12px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}.logo{width:48px;height:48px}}
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -53,7 +122,7 @@
       </section>
 
       <aside class="card">
-        <h2>8-Week Starter Plan</h2>
+        <h2>8‑Week Starter Plan</h2>
         <p class="plan">Perfect for beginners who can do 1–3 pushups. Train 3× per week (e.g., Mon/Wed/Fri).</p>
         <ol style="margin-top:12px;color:var(--muted)">
           <li><strong>Weeks 1–2:</strong> 3 sets of incline or knee pushups — aim 6–10 reps.</li>
@@ -68,8 +137,7 @@
       </aside>
     </div>
   </div>
-  <script href="js.js">
-    
+  <script>
     const STORAGE_KEY = 'pushup_sessions_v1';
     const sessEl = document.getElementById('sessionsCount');
     const maxEl = document.getElementById('currentMax');
@@ -182,4 +250,3 @@
   </script>
 </body>
 </html>
-
